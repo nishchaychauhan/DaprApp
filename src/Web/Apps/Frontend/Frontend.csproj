@@ -10,4 +10,8 @@
     <PackageReference Include="Dapr.AspNetCore" Version="1.11.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Contracts\Accounts\Microservices.Grpc.Accounts.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

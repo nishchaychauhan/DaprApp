@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
+    <RootNamespace>Microservices.BuildingBlocks.EventBus</RootNamespace>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <PackageReference Include="Dapr.AspNetCore" Version="1.11.0" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Foundation\FoundationContentTypes\Microservices.Foundation.ContentTypes.csproj" />
+  </ItemGroup>
+ </Project>

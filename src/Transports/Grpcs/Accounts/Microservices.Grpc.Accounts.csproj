@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>Microservices.Grpc.Accounts</RootNamespace>
+		<UserSecretsId>a1251e00-7db6-4ffd-b03d-738d324f5e5b</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..\..</DockerfileContext>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Protos\**" />
+		<Content Remove="Protos\**" />
+		<EmbeddedResource Remove="Protos\**" />
+		<None Remove="Protos\**" />
+	</ItemGroup>
+
+  <PropertyGroup>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+  <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.Globalization.Invariant" Value="false" />
+  </ItemGroup>
+  
+	<ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+		<PackageReference Include="Serilog.Sinks.Seq" Version="5.2.2" />
+		<PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+		<PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
+		<PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+		<PackageReference Include="Grpc.AspNetCore" Version="2.54.0" />
+		<PackageReference Include="Grpc.AspNetCore.Web" Version="2.54.0" />
+		<PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
+		<PackageReference Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
+    <PackageReference Include="Dapr.AspNetCore" Version="1.11.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	</ItemGroup>
+  
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.csproj" />
+	  <ProjectReference Include="..\..\..\Foundation\Contracts\Accounts\Microservices.Grpc.Accounts.Contracts.csproj" />
+	</ItemGroup>
+</Project>

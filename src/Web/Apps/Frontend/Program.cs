@@ -1,3 +1,5 @@
+using Microservices.Grpc.Accounts.Contracts.Client;
+using Microservices.Grpc.Accounts.Contracts.Interfaces;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +16,7 @@ builder.Services.AddDaprClient(client =>
 {
     client.UseJsonSerializationOptions(options);
 });
-
+builder.Services.AddSingleton<IAccountsGrpcService, AccountsGrpcServiceClient>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

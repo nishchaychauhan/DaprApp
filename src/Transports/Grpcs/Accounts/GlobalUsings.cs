@@ -1,0 +1,17 @@
+﻿global using Dapr.Client;
+global using Microservices.Grpc.Accounts;
+global using Microservices.Grpc.Accounts.Contracts.Interfaces;
+global using Microservices.Grpc.Accounts.Services;
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Hosting;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.OpenApi.Models;
+global using ProtoBuf.Grpc;
+global using ProtoBuf.Grpc.Server;
+global using Serilog;
+global using Serilog.Exceptions;
+global using System;
+global using System.IO.Compression;
+global using System.Threading.Tasks;
